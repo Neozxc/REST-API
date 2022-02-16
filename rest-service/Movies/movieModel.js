@@ -3,6 +3,8 @@ const mongoose = require("mongoose");
 const movieSchema = new mongoose.Schema({
     name: {
         type: String,
+        required: true,
+        unique: true,
     },
 
     actor: [
@@ -13,7 +15,7 @@ const movieSchema = new mongoose.Schema({
 });
 
 // Set it to variable
-const Movie = mongoose.model("movies", movieSchema);
+const Movie = mongoose.model("Movie", movieSchema);
 
 // Export variable for later use in the app
 module.exports = Movie;
